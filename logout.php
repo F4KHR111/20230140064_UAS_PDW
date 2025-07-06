@@ -8,6 +8,6 @@ $_SESSION = array();
 session_destroy();
 
 // Redirect ke halaman login
-header("Location: ../login.php");
+header("Location: /20230140064_UAS_PDW/login.php");
 exit;
 ?>

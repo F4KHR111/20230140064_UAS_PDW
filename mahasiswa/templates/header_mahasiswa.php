@@ -36,15 +36,15 @@ if (!isset($_SESSION['user_id'])) {
                                 $inactiveClass = 'text-gray-200 hover:bg-blue-700 hover:text-white';
                             ?>
                             <a href="dashboard.php" class="<?php echo ($activePage == 'dashboard') ? $activeClass : $inactiveClass; ?> px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
-                            <a href="my_courses.php" class="<?php echo ($activePage == 'my_courses') ? $activeClass : $inactiveClass; ?> px-3 py-2 rounded-md text-sm font-medium">Praktikum Saya</a>
-                            <a href="courses.php" class="<?php echo ($activePage == 'courses') ? $activeClass : $inactiveClass; ?> px-3 py-2 rounded-md text-sm font-medium">Cari Praktikum</a>
+                            <a href="praktikum_saya.php" class="<?php echo ($activePage == 'praktikum_saya') ? $activeClass : $inactiveClass; ?> px-3 py-2 rounded-md text-sm font-medium">Praktikum Saya</a>
+                            <a href="cari_praktikum.html" class="<?php echo ($activePage == 'cari_praktikum') ? $activeClass : $inactiveClass; ?> px-3 py-2 rounded-md text-sm font-medium">Cari Praktikum</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
-                        <a href="../logout.php" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-md transition-colors duration-300">
+                        <a href="/20230140064_UAS_PDW/logout.php" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-md transition-colors duration-300">
                             Logout
                         </a>
                     </div>
