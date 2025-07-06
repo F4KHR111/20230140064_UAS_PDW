@@ -250,92 +250,97 @@ if (isset($_GET['action']) && $_GET['action'] === 'logout') {
       <header class="flex justify-between items-center mb-8">
         <h2 class="text-3xl font-bold text-gray-900">Manajemen Modul</h2>
         <a href="?action=logout" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md">Logout</a>
-    </header>
+      </header>
 
-    <div class="flex flex-col md:flex-row gap-6 mb-8">
-      <!-- Form Tambah/Edit Modul -->
-      <section class="bg-white p-6 rounded-md shadow-md w-full md:w-1/2">
-        <h3 class="text-xl font-semibold mb-4">Tambah / Edit Modul</h3>
-        <form id="formModul" action="manajemen_modul.php" method="POST" enctype="multipart/form-data">
-          <input type="hidden" name="id" id="modulId" />
-          <div class="mb-4">
-            <label for="judul_modul" class="block font-medium mb-1">Judul Modul</label>
-            <input type="text" name="judul_modul" id="judul_modul" class="w-full border border-gray-300 p-2 rounded" required />
-          </div>
-          <div class="mb-4">
-            <label for="deskripsi" class="block font-medium mb-1">Deskripsi Modul</label>
-            <textarea name="deskripsi" id="deskripsi" rows="3" class="w-full border border-gray-300 p-2 rounded"></textarea>
-          </div>
-          <div class="mb-4">
-            <label for="pertemuan_ke" class="block font-medium mb-1">Pertemuan ke-</label>
-            <input type="number" name="pertemuan_ke" id="pertemuan_ke" class="w-24 border border-gray-300 p-2 rounded" min="1" required />
-          </div>
-          <div class="mb-4">
-            <label for="file_materi" class="block font-medium mb-1">File Materi (PDF/DOCX)</label>
-            <input type="file" name="file_materi" id="file_materi" accept=".pdf,.doc,.docx" />
-          </div>
-          <div class="mb-4">
-            <label for="mata_praktikum_id" class="block font-medium mb-1">Mata Praktikum</label>
-            <select name="mata_praktikum_id" id="mata_praktikum_id" class="w-full border border-gray-300 p-2 rounded" required>
-              <option value="">-- Pilih Mata Praktikum --</option>
-              <?php
-              // Ambil data mata praktikum dari database
-              $result = $conn->query("SELECT id, nama_praktikum FROM mata_praktikum");
-              while ($row = $result->fetch_assoc()) {
-                echo "<option value='" . $row['id'] . "'>" . htmlspecialchars($row['nama_praktikum']) . "</option>";
-              }
-              ?>
-            </select>
-          </div>
-          <div>
-            <button type="submit" name="action" value="create" id="btnSubmit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded mr-2">
-              Simpan Modul
-            </button>
-            <button type="button" id="btnReset" class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded">
-              Reset
-            </button>
-          </div>
-        </form>
-      </section>
-      
-     <!-- Form Upload Tugas Mahasiswa -->
-    <section class="bg-white p-6 rounded-md shadow-md w-full md:w-1/2">
-      <h3 class="text-xl font-semibold mb-4">Upload Tugas untuk Mahasiswa</h3>
-      <form action="manajemen_modul.php" method="POST" enctype="multipart/form-data">
+      <!-- Form Section - Dua kolom bersebelahan -->
+      <div class="flex flex-col lg:flex-row gap-6 mb-8">
+        <!-- Form Tambah/Edit Modul -->
+        <section class="bg-white p-6 rounded-md shadow-md w-full lg:w-1/2">
+          <h3 class="text-xl font-semibold mb-4">Tambah / Edit Modul</h3>
+          <form id="formModul" action="manajemen_modul.php" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="id" id="modulId" />
+            <div class="mb-4">
+              <label for="judul_modul" class="block font-medium mb-1">Judul Modul</label>
+              <input type="text" name="judul_modul" id="judul_modul" class="w-full border border-gray-300 p-2 rounded" required />
+            </div>
+            <div class="mb-4">
+              <label for="deskripsi" class="block font-medium mb-1">Deskripsi Modul</label>
+              <textarea name="deskripsi" id="deskripsi" rows="3" class="w-full border border-gray-300 p-2 rounded"></textarea>
+            </div>
+            <div class="mb-4">
+              <label for="pertemuan_ke" class="block font-medium mb-1">Pertemuan ke-</label>
+              <input type="number" name="pertemuan_ke" id="pertemuan_ke" class="w-24 border border-gray-300 p-2 rounded" min="1" required />
+            </div>
+            <div class="mb-4">
+              <label for="file_materi" class="block font-medium mb-1">File Materi (PDF/DOCX)</label>
+              <input type="file" name="file_materi" id="file_materi" accept=".pdf,.doc,.docx" />
+            </div>
+            <div class="mb-4">
+              <label for="mata_praktikum_id" class="block font-medium mb-1">Mata Praktikum</label>
+              <select name="mata_praktikum_id" id="mata_praktikum_id" class="w-full border border-gray-300 p-2 rounded" required>
+                <option value="">-- Pilih Mata Praktikum --</option>
+                <?php
+                // Ambil data mata praktikum dari database
+                $result = $conn->query("SELECT id, nama_praktikum FROM mata_praktikum");
+                while ($row = $result->fetch_assoc()) {
+                  echo "<option value='" . $row['id'] . "'>" . htmlspecialchars($row['nama_praktikum']) . "</option>";
+                }
+                ?>
+              </select>
+            </div>
+            <div>
+              <button type="submit" name="action" value="create" id="btnSubmit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded mr-2">
+                Simpan Modul
+              </button>
+              <button type="button" id="btnReset" class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded">
+                Reset
+              </button>
+            </div>
+          </form>
+        </section>
         
-        <div class="mb-4">
-          <label for="judul_tugas" class="block font-medium mb-1">Judul Tugas</label>
-          <input type="text" name="judul_tugas" id="judul_tugas" class="w-full border border-gray-300 p-2 rounded" required>
-        </div>
+        <!-- Form Upload Tugas Mahasiswa -->
+        <section class="bg-white p-6 rounded-md shadow-md w-full lg:w-1/2">
+          <h3 class="text-xl font-semibold mb-4">Upload Tugas untuk Mahasiswa</h3>
+          <form action="manajemen_modul.php" method="POST" enctype="multipart/form-data">
+            
+            <div class="mb-4">
+              <label for="judul_tugas" class="block font-medium mb-1">Judul Tugas</label>
+              <input type="text" name="judul_tugas" id="judul_tugas" class="w-full border border-gray-300 p-2 rounded" required>
+            </div>
 
-        <div class="mb-4">
-          <label for="modul_id" class="block font-medium mb-1">Modul Terkait</label>
-          <select name="modul_id" id="modul_id" class="w-full border border-gray-300 p-2 rounded" required>
-            <option value="">-- Pilih Modul --</option>
-            <?php
-            $result = $conn->query("SELECT m.id, m.judul_modul, p.nama_praktikum FROM modul m JOIN mata_praktikum p ON m.mata_praktikum_id = p.id ORDER BY p.nama_praktikum, m.pertemuan_ke");
-            while ($row = $result->fetch_assoc()) {
-              echo "<option value='{$row['id']}'>[{$row['nama_praktikum']}] {$row['judul_modul']}</option>";
-            }
-            ?>
-          </select>
-        </div>
+            <div class="mb-4">
+              <label for="modul_id" class="block font-medium mb-1">Modul Terkait</label>
+              <select name="modul_id" id="modul_id" class="w-full border border-gray-300 p-2 rounded" required>
+                <option value="">-- Pilih Modul --</option>
+                <?php
+                $result = $conn->query("SELECT m.id, m.judul_modul, p.nama_praktikum FROM modul m JOIN mata_praktikum p ON m.mata_praktikum_id = p.id ORDER BY p.nama_praktikum, m.pertemuan_ke");
+                while ($row = $result->fetch_assoc()) {
+                  echo "<option value='{$row['id']}'>[{$row['nama_praktikum']}] {$row['judul_modul']}</option>";
+                }
+                ?>
+              </select>
+            </div>
 
-        <div class="mb-4">
-          <label for="deadline" class="block font-medium mb-1">Deadline</label>
-          <input type="datetime-local" name="deadline" id="deadline" class="w-full border border-gray-300 p-2 rounded" required>
-        </div>
+            <div class="mb-4">
+              <label for="deadline" class="block font-medium mb-1">Deadline</label>
+              <input type="datetime-local" name="deadline" id="deadline" class="w-full border border-gray-300 p-2 rounded" required>
+            </div>
 
-        <div class="mb-4">
-          <label for="file_tugas" class="block font-medium mb-1">File Tugas (PDF/DOCX)</label>
-          <input type="file" name="file_tugas" id="file_tugas" accept=".pdf,.doc,.docx" class="w-full">
-        </div>
+            <div class="mb-4">
+              <label for="file_tugas" class="block font-medium mb-1">File Tugas (PDF/DOCX)</label>
+              <input type="file" name="file_tugas" id="file_tugas" accept=".pdf,.doc,.docx" class="w-full">
+            </div>
 
-        <button type="submit" name="upload_tugas_asisten">Upload</button>
-      </form>
-    </section>
+            <button type="submit" name="upload_tugas_asisten" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
+              Upload Tugas
+            </button>
+          </form>
+        </section>
+      </div>
+
       <!-- Tabel Daftar Modul -->
-      <section class="bg-white p-6 rounded-md shadow-md max-w-full">
+      <section class="bg-white p-6 rounded-md shadow-md w-full">
         <h3 class="text-xl font-semibold mb-4">Daftar Modul</h3>
         <div class="overflow-x-auto">
           <table class="min-w-full table-auto border-collapse border border-gray-200">
