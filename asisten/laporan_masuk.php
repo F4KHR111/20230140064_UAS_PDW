@@ -219,6 +219,12 @@ while ($row = $res->fetch_assoc()) {
         </tbody>
       </table>
     </div>
+    <div id="wrapper">
+        <aside id="sidebar">
+            </aside>
+        <div id="main-content">
+            </div>
+    </div>
   <?php endif; ?>
 </section>
 
