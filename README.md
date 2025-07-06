@@ -9,6 +9,7 @@ UI ASISTEN
 ![{5CBE20A3-036E-490D-9FE5-6AD2E54B6FF7}](https://github.com/user-attachments/assets/834cabd2-822d-4070-841a-0fbd389d9da9)
 ![{ED9A7F71-1AAF-4037-AE45-66818FE8C137}](https://github.com/user-attachments/assets/39e8d9f0-48cb-4f0a-ad12-6b2b939b994d)
 ![{4074D752-9A64-405D-80AF-8F9684E03D4A}](https://github.com/user-attachments/assets/5cb9b3e9-a0cb-4550-9e27-7d3dafbb2979)
+![{F80648B4-2DB9-44E2-AC04-3A044C5346B4}](https://github.com/user-attachments/assets/57e3ad60-6e25-4947-8ab1-0a56a4b85044)
 UI MAHASISWA
 ![{440DE156-C838-46ED-93E4-5D0D09ADDABC}](https://github.com/user-attachments/assets/b3f4fcb7-00c3-4c05-9541-917b1542beca)
 ![{66FC1779-C458-4078-842D-B8EB6701F222}](https://github.com/user-attachments/assets/e45351c8-f31a-44c4-82ec-0d76055acff8)
